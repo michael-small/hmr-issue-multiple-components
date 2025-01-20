@@ -1,21 +1,36 @@
 import { Component, VERSION } from '@angular/core';
-import { AComponent } from './a.component';
-import { BComponent } from './b.component';
-import { CComponent } from './c.component';
+import { Comment, CommentComponent} from './comment.component.';
 
 @Component({
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-    <app-a />
-    <app-b />
-    <app-c />
+    <a href="https://github.com/angular/angular/issues/59632" target="_blank">HMR Breaks nested components #59632</a>
+    <app-comment [comment]="comment" />
 
     {{version.full}}
   `,
   styleUrl: './app.component.scss',
-  imports: [AComponent, BComponent, CComponent],
+  imports: [CommentComponent],
 })
 export class AppComponent {
   version = VERSION;
+
+  comment: Comment = {
+    id: 1,
+    author: 'author1',
+    text: 'text here1',
+    children: [
+        {
+            id: 2,
+            author: 'author2',
+            text: 'text here2'
+        },
+        {
+            id: 2,
+            author: 'author3',
+            text: 'text here3'
+        }
+    ]
+  }
 }

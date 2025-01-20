@@ -1,4 +1,4 @@
-# HmrIssueMultipleComponents - fixed with latest 19.1.2's and 19.1.3's woo
+[HMR Breaks nested components #59632](https://github.com/angular/angular/issues/59632)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
 
